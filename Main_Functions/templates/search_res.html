@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <h3>Query Given: {{q}}</h3>
+    <br>
+   <table class="table table-hover table-bordered ">
+    {% if queryset %}
+    <thead>
+      <th>Title of Invention</th>
+      <th>Field of Invention</th>
+      <th>Application Number</th>
+      <!-- <th>Application Type</th> -->
+      <th>Date of Publication</th>
+      
+      <!-- <th>E-Mail</th> -->
+      </thead>
+      <tbody class="table-group-divider">
+        {% for patent in queryset %}
+        <tr>
+          <td>{{ patent.Title_of_Invention }}</td>
+          <td>{{ patent.Field_of_Invention }}</td>
+          <td>{{ patent.Application_Number }}</td>
+          <!-- <td>{{ patent.Application_Type }}</td> -->
+          <td>{{ patent.Date_of_Publication }}</td>
+          </tr>
+ 
+          {% endfor %}
+      </tbody> 
+          {% endif %}
+        <!-- 
+            <li>No results found.</li> -->
+    
+    </table>
+{% endblock %}

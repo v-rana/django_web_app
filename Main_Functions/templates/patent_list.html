@@ -1,0 +1,37 @@
+<!-- your_app_name/templates/your_app_name/patent_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-hover table-bordered ">
+    <thead>
+        <tr>
+            <th>Title of Invention</th>
+            <th>Field of Invention</th>
+            <th>Application Number</th>
+            <!-- <th>Application Type</th> -->
+            <th>Date of Publication</th>
+            
+            <!-- <th>E-Mail</th> -->
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for patent in data %}
+            <tr>
+                <td>{{ patent.Title_of_Invention }}</td>
+                <td>{{ patent.Field_of_Invention }}</td>
+                <td>{{ patent.Application_Number }}</td>
+                <!-- <td>{{ patent.Application_Type }}</td> -->
+                <td>{{ patent.Date_of_Publication }}</td>
+                
+                
+                <!-- <td>{{ patent.E_Mail }}</td> -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
+{% endblock %}

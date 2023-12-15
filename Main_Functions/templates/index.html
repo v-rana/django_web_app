@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        75% { opacity: 1; }
+        100% { opacity: 1; }
+    }
+
+    .blink-text {
+        animation: blink 5s infinite;
+    }
+</style>
+<br><br>
+
+<div class="container ">
+    <div class="alert alert-secondary blink-text">
+        Currently ABES engineering College Patent Data available
+    </div>
+</div>
+{% endblock %}
+
+
